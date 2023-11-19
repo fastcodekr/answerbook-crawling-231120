@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Remote Python 3.10.12 (sftp://ubuntu@13.124.4.44:22/home/ubuntu/.virtualenvs/server-5/bin/python) (3)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="$USER_HOME$/opt/anaconda3" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
