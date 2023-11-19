@@ -31,7 +31,7 @@ TRACE_ARGS = (ATRACE_ARGS + CATEGORIES)
 TEST_DIR = os.path.join(os.path.dirname(__file__), os.pardir, 'test_data')
 ATRACE_DATA = os.path.join(TEST_DIR, 'atrace_data')
 ATRACE_DATA_RAW = os.path.join(TEST_DIR, 'atrace_data_raw')
-ATRACE_DATA_STRIPPED = os.path.join(TEST_DIR, 'atrace_data_stripped')
+ATRACE_DATA_STRIPPED = os.path.join(TEST_DIR, 'atrace_datstripped')
 ATRACE_PROCFS_DUMP = os.path.join(TEST_DIR, 'atrace_procfs_dump')
 ATRACE_EXTRACTED_TGIDS = os.path.join(TEST_DIR, 'atrace_extracted_tgids')
 ATRACE_MISSING_TGIDS = os.path.join(TEST_DIR, 'atrace_missing_tgids')
@@ -89,10 +89,10 @@ class AtraceAgentTest(unittest.TestCase):
     with contextlib.nested(open(ATRACE_DATA_RAW, 'r'),
                            open(ATRACE_DATA_STRIPPED, 'r')) as (f1, f2):
       atrace_data_raw = f1.read()
-      atrace_data_stripped = f2.read()
+      atrace_datstripped = f2.read()
 
       trace_data = atrace_agent.strip_and_decompress_trace(atrace_data_raw)
-      self.assertEqual(atrace_data_stripped, trace_data)
+      self.assertEqual(atrace_datstripped, trace_data)
 
   @decorators.HostOnlyTest
   def test_extract_tgids(self):

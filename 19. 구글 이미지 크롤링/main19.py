@@ -68,3 +68,19 @@ for k,i in enumerate(links):
 
 print('다운로드 완료하였습니다.')
 
+URL='https://www.nate.com'
+driver.get(url=URL)
+driver.implicitly_wait(time_to_wait=10)
+
+#driver.find_element_by_css_selector('#olLiveIssueKeyword > li:nth-child(1) > a > span.txt_rank').click()
+
+driver.find_element(By.CSS_SELECTOR,'#olLiveIssueKeyword > li:nth-child(1) > a > span.txt_rank').click()
+
+#nate_results = driver.find_elements_by_css_selector('#search-option > form:nth-child(1) > fieldset > div.issue-kwd > span > a')
+
+nate_results = driver.find_elements(By.CSS_SELECTOR,'#search-option > form:nth-child(1) > fieldset > div.issue-kwd > span > a')
+
+nate_list = []
+for nate_result in nate_results:
+    print(nate_result.text)
+    nate_list.append(nate_result.text)
